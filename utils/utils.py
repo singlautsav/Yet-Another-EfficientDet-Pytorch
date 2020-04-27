@@ -191,7 +191,7 @@ class CustomDataParallel(nn.DataParallel):
     def scatter(self, inputs, kwargs, device_ids):
         # More like scatter and data prep at the same time. The point is we prep the data in such a way
         # that no scatter is necessary, and there's no need to shuffle stuff around different GPUs.
-        devices = ['cuda:0']
+        devices = ['cuda:0','cuda:1']
         splits = inputs[0].shape[0] // self.num_gpus
         print("heheheheheheheheh")
         print(devices)
